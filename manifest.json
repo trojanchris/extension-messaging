@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Extension Messaging Template",
+  "version": "1.0",
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent" :true
+  },
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts":[
+    {
+      "matches":["*://*/*"],
+      "js": [
+        "js/loader.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "options_page": "html/options.html",
+  "permissions": ["tabs","<all_urls>"]
+}
